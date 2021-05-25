@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Jigsaw Puzzle</title>
+<link rel="stylesheet" href="puzzleimg.css" />
+<script src="puzzleimg.js"></script>
+<style>
+body{
+background:#fbfbfe;
+text-align:center;
+}
+h1 {
+margin:5px auto;
+font-size:22px;
+}
+h2 {
+margin:0 auto 4px auto;
+font-size:18px;
+}
+#dv1 {
+display:inline-block;
+margin:5px 1px;
+border:1px dashed #333;
+text-align:center;
+padding:3px;
+}
+</style>
+</head>
+<body>
+<h1>Jigsaw Puzzle</h1><br>
+<p>---------Please refresh the page to try other levels--------</p><br>
+<div id="dv1">
+<img src="sahil.jpeg" width="350" height="437" alt="sahil" class="img" />
+</div>
+
+<br><p id="level"></p><br>
+<button type="button" onclick="level(1,2,1)">Level 1</button>
+<button type="button" onclick="level(1,3,2)">Level 2</button>
+<button type="button" onclick="level(2,5,3)">Level 3</button>
+<script>
+//function called when the puzzle is completed
+var solved = function(){
+  alert('Congratulations');
+	
+}
+function level(col,row,level){
+document.getElementById("level").innerHTML = "LEVEL "+ level;
+imgToPuzzle('div .img', col, row, 1, solved);
+}
+
+
+</script>
+</body>
+</html>
